@@ -9,6 +9,7 @@ class MengT(QWidget,Ui_MengT):
         super().__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.creat_meng)
+        self.setWindowIcon(QIcon("icon.ico"))
         self.show()
 
     def creat_meng(self):
@@ -16,7 +17,7 @@ class MengT(QWidget,Ui_MengT):
         give = ""
         count = 200
         count = int(self.le_count.text())
-       
+        
         for i in range(count):
             enum = random.randint(0,3)
             if (enum == 0):
