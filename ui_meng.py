@@ -15,7 +15,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QPushButton,
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QPushButton,QLabel,
     QSizePolicy, QTextBrowser, QVBoxLayout, QWidget)
 
 class Ui_MengT(object):
@@ -23,7 +23,7 @@ class Ui_MengT(object):
         if not MengT.objectName():
             MengT.setObjectName(u"MengT")
         
-        MengT.resize(400, 300)
+        MengT.setFixedSize(400, 300)
         self.verticalLayout = QVBoxLayout(MengT)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.tb_view = QTextBrowser(MengT)
@@ -31,11 +31,14 @@ class Ui_MengT(object):
 
         self.verticalLayout.addWidget(self.tb_view)
 
+        self.lb_count = QLabel()
+        self.lb_count.setObjectName(u"lb_count")
+        self.lb_count.setText("个数:")
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.le_count = QLineEdit(MengT)
         self.le_count.setObjectName(u"le_count")
-
+        self.horizontalLayout.addWidget(self.lb_count)
         self.horizontalLayout.addWidget(self.le_count)
 
         self.pushButton = QPushButton(MengT)
